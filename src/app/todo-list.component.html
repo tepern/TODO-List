@@ -1,0 +1,41 @@
+<div class="todo">
+    <h1 class="h1">TODO лист</h1>
+    <div class="todo-create">
+        <form #todoForm="ngForm" class="todo-form" (ngSubmit)="createTodo(todoForm)" novalidate>
+            <input type="text" id="title" class="form-control" placeholder="Новая задача" required name="title" [(ngModel)]="newTodo.title" #title="ngModel">
+            <div [hidden]="title.valid || title.untouched" class="alert alert-danger">Укажите название задачи</div>
+        </form>
+    </div>
+    <ul class="todo-list">
+        <li *ngFor="let todo of todos" [class.completed]="todo.completed === true">
+            <div class="todo__item" *ngIf="!editing || editingTodo.id !=todo.id">
+                <a class="todo-completed" (click)="toggleCompleted(todo)">
+                    <i class="material-icons toggle-completed-checkbox"></i>
+                </a>
+                <span class="todo__title">{{todo.title}}</span>
+                <span class="todo-actions">
+                    <a class="todo__link" (click)="editTodo(todo)">
+                        <i class="material-icons edit">edit</i>
+                    </a>
+                    <a class="todo__link" (click)="deleteTodo(todo.id)">
+                        <i class="material-icons delete">clear</i>
+                    </a>
+                </span>
+            </div>
+            <div class="todo-edit" *ngIf="editing && editingTodo.id === todo.id">
+                <input class="form-control" type="text" [(ngModel)]="editingTodo.title" required>
+                <span class="edit-actions">
+                    <a class="todo__link" (click)="updateTodo(editingTodo)">
+                        <i class="material-icons delete">done</i>
+                    </a>
+                    <a class="todo__link" (click)="clearEditing()">
+                        <i class="material-icons delete">clear</i>
+                    </a>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <div class="no-todos" *ngIf="todos && todos.length === 0">
+        <p>Зазач нет</p>
+    </div>
+</div>
