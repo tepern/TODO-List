@@ -1,0 +1,16 @@
+<h3>Слайдер</h3>
+<div class="slider">
+    <item [id]="imgId"></item>
+    <router-outlet></router-outlet>
+    <ul class="slider-dots">
+        <li class="slider-dots__item">
+            <a class="slider-dots__link" target="_self" [routerLink]="" [queryParams]="{'id':'1'}"></a>
+        </li>
+        <li class="slider-dots__item">
+            <a class="slider-dots__link" [routerLink]="" [queryParams]="{'id':'2'}"></a>
+        </li>
+        <li class="slider-dots__item">
+            <a class="slider-dots__link" [routerLink]="" [queryParams]="{'id':'3'}"></a>
+        </li>
+    </ul>
+</div>

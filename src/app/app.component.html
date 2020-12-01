@@ -1,5 +1,17 @@
+<header class="header">
+  <div class="container">
+    <ul class="nav">
+      <li class="nav__item">
+        <a class="nav__link" routerLinkActive="active" routerLink="" [routerLinkActiveOptions]="{exact:true}">Главная</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" routerLinkActive="active" routerLink="/slider">Слайдер</a>
+      </li>
+    </ul>
+  </div>
+</header>
 <div class="container">
-    <todo-list></todo-list>
+    <router-outlet></router-outlet>
 </div>
 
 

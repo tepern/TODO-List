@@ -18,23 +18,17 @@ export class TodoListComponent implements OnInit {
     editingTodo: Todo = new Todo();
 
     ngOnInit(): void {
-        this.getTodos();
-    }
-
-    getTodos(): void {
-
+        
     }
 
     createTodo(todoForm: NgForm): void {
-        //this.todos.unshift(new Todo(this.todos.length+1,this.newTodo.title,new Date,false));
         let createTodo = this.newTodo;
         this.newTodo = new Todo();
         this.todos.unshift(createTodo);
     }
 
     deleteTodo(id: string): void {
-        this.todos = this.todos.filter(todo => todo.id != id); 
-        console.log(this.todos); 
+        this.todos = this.todos.filter(todo => todo.id != id);  
     }
 
     updateTodo(todoData: Todo): void {
@@ -47,7 +41,6 @@ export class TodoListComponent implements OnInit {
     toggleCompleted(todoData: Todo): void {
         todoData.completed = !todoData.completed;
         let updatedTodo = todoData;
-        console.log(updatedTodo);
         let existingTodo = this.todos.find(todo => todo.id === updatedTodo.id);
         Object.assign(existingTodo, updatedTodo);
     }

@@ -5,18 +5,30 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list.component';
+import { SliderComponent } from './slider.component';
+import { ItemComponent } from './item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {Routes, RouterModule} from '@angular/router';
+
+const appRoutes: Routes =[
+    { path: '', component: TodoListComponent},
+    { path: 'slider', component: SliderComponent}
+];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TodoListComponent,
+    SliderComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

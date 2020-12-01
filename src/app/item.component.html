@@ -1,0 +1,7 @@
+<ng-content></ng-content>
+<div class="slider__item">
+    <p class="slider__caption" *ngIf="id">Слайд {{id}}</p>
+    <p class="slider__caption" *ngIf="!id">Слайд 1</p>
+    <img src="src/assets/images/a-{{id}}.jpg" alt="" *ngIf="id">
+    <img src="src/assets/images/a-1.jpg" alt="" *ngIf="!id">
+</div>

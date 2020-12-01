@@ -3,6 +3,10 @@ html,body,h1,h2,h3 {
     padding: 0;
 }
 
+html,body {
+    height: 100%;
+}
+
 body,div,p,a,span { 
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif; 
@@ -60,4 +64,21 @@ a {
 
 .form-control:focus {
     border: 1px solid #626262;
+}
+
+.nav {
+    display: flex;  
+}
+
+.nav__item {
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
+.nav a {
+        color: white;
+    }
+
+.nav .active {
+    color: red;
 }
